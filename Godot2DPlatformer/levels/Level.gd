@@ -3,7 +3,14 @@ extends Node2D
 signal score_changed
 
 var Collectible = preload('res://assets/items/Collectible.tscn')
+var Danger_Down = preload('res://assets/items/SpikeDown.tscn')
+var Danger_Left = preload('res://assets/items/SpikeLeft.tscn')
+var Danger_Right = preload('res://assets/items/SpikeRight.tscn')
+var Danger_Top = preload('res://assets/items/SpikeTop.tscn')
+var Danger_Fall = preload('res://assets/items/SpikeFall.tscn')
+
 onready var pickups = $Pickups
+onready var dangers = $Danger
 onready var HUD = $CanvasLayer/HUD
 var score = 0
 
@@ -14,9 +21,11 @@ func _ready():
 	#score = 0
 	emit_signal('score_changed', score)
 	pickups.hide()
+	dangers.hide()
 	$Player.start($PlayerSpawn.position)
 	#set_camera_limits()
 	spawn_pickups()
+	spawn_spikes()
 
 func set_camera_limits():
 	var map_size = $World.get_used_rect()
@@ -34,6 +43,37 @@ func spawn_pickups():
 			c.init(type, pos + pickups.cell_size/2)
 			add_child(c)
 			c.connect('pickup', self, '_on_Collectible_pickup')
+
+func spawn_spikes():
+	for cell in dangers.get_used_cells():
+		var id = dangers.get_cellv(cell)
+		var type = dangers.tile_set.tile_get_name(id)
+		if type in ['Down', 'Left', 'Top', 'Right', 'Fall']:
+			if type == 'Down':
+				var d = Danger_Down.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
+			if type == 'Left':
+				var d = Danger_Left.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
+			if type == 'Right':
+				var d = Danger_Right.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
+			if type == 'Top':
+				var d = Danger_Top.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
+			if type == 'Fall':
+				var d = Danger_Fall.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
 
 func _on_Collectible_pickup():
 	$PickupSound.play()

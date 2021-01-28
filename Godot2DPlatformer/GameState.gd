@@ -5,7 +5,8 @@ var current_level = 1
 var total_life = 2
 
 var game_scene = 'res://Main.tscn'
-var title_screen = 'res://ui/TitleScreen.tscn'
+var main_menu = 'res://ui/MainMenu.tscn'
+var levels_menu = 'res://ui/Levels.tscn'
 
 func restart():
 	if total_life >0:
@@ -13,7 +14,7 @@ func restart():
 		print(total_life)
 	else:
 		total_life=2
-		get_tree().change_scene(title_screen)
+		get_tree().change_scene(main_menu)
 
 func next_level():
 	current_level += 1

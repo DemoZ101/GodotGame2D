@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Purple.png-1bbfce750c918bc9c61c4becfaf5dffb.stex"
+path="res://.import/02.png-dea483ed066b2bb0ab1bd214b4000f6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Purple.png"
-dest_files=[ "res://.import/Purple.png-1bbfce750c918bc9c61c4becfaf5dffb.stex" ]
+source_file="res://ui/Levels/02.png"
+dest_files=[ "res://.import/02.png-dea483ed066b2bb0ab1bd214b4000f6c.stex" ]
 
 [params]
 

@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
-[ext_resource path="res://assets/environment/layers/middle.png" type="Texture" id=3]
 [ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=5]
 
@@ -69,12 +67,14 @@ tracks/3/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
 stretch_mode = 7
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -83,7 +83,6 @@ margin_left = -17.0
 margin_top = 312.0
 margin_right = 1044.0
 margin_bottom = 680.0
-texture = ExtResource( 3 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false

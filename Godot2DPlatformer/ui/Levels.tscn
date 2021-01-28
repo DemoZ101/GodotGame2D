@@ -1,0 +1,229 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/character/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tilesets/Terrain.tres" type="TileSet" id=2]
+[ext_resource path="res://ui/Levels/01.png" type="Texture" id=3]
+[ext_resource path="res://ui/Levels/02.png" type="Texture" id=4]
+[ext_resource path="res://ui/Levels/05.png" type="Texture" id=5]
+[ext_resource path="res://ui/Levels/04.png" type="Texture" id=6]
+[ext_resource path="res://ui/Levels/03.png" type="Texture" id=7]
+[ext_resource path="res://ui/Levels/10.png" type="Texture" id=8]
+[ext_resource path="res://ui/Levels/07.png" type="Texture" id=9]
+[ext_resource path="res://ui/Levels/06.png" type="Texture" id=10]
+[ext_resource path="res://ui/Levels/09.png" type="Texture" id=11]
+[ext_resource path="res://ui/Levels/08.png" type="Texture" id=12]
+[ext_resource path="res://ui/Levels.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.47585, 7.49802 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.4375, 7.49999 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.51229, 7.50201 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8.47533, 7.54082 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8.52626, 7.61695 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8.49853, 7.53398 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.55199, 7.57668 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.57029, 7.62587 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8.58947, 7.54022 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 8.59576, 7.55439 )
+
+[node name="Levels" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131074, 3, 0, -131073, 3, 1, -196608, 3, 1, -196607, 3, 1, -196606, 3, 1, -196605, 3, 1, -196604, 3, 1, -196603, 3, 1, -196602, 3, 1, -196601, 3, 1, -196600, 3, 1, -196599, 3, 1, -196598, 3, 1, -196597, 3, 1, -196596, 3, 1, -196595, 3, 1, -196594, 3, 1, -196593, 3, 1, -196592, 3, 1, -196591, 3, 1, -196590, 3, 1, -196589, 3, 1, -196588, 3, 2, -65538, 3, 65536, -65537, 3, 3, -131072, 3, 131073, -131071, 3, 131073, -131070, 3, 131073, -131069, 3, 131073, -131068, 3, 131073, -131067, 3, 131073, -131066, 3, 131073, -131065, 3, 131073, -131064, 3, 131073, -131063, 3, 131073, -131062, 3, 131073, -131061, 3, 131073, -131060, 3, 131073, -131059, 3, 131073, -131058, 3, 131073, -131057, 3, 131073, -131056, 3, 131073, -131055, 3, 131073, -131054, 3, 4, -131053, 3, 65537, -131052, 3, 65538, -2, 3, 65536, -1, 3, 65538, -65518, 3, 65536, -65517, 3, 65537, -65516, 3, 65538, 65534, 3, 65536, 65535, 3, 65538, 18, 3, 65536, 19, 3, 65537, 20, 3, 65538, 131070, 3, 65536, 131071, 3, 65538, 65554, 3, 65536, 65555, 3, 65537, 65556, 3, 65538, 196606, 3, 65536, 196607, 3, 65538, 131090, 3, 65536, 131091, 3, 65537, 131092, 3, 65538, 262142, 3, 65536, 262143, 3, 65538, 196612, 3, 0, 196613, 3, 1, 196614, 3, 1, 196615, 3, 1, 196616, 3, 1, 196617, 3, 1, 196618, 3, 1, 196619, 3, 1, 196620, 3, 1, 196621, 3, 1, 196622, 3, 1, 196623, 3, 1, 196624, 3, 1, 196625, 3, 1, 196626, 3, 65540, 196627, 3, 65537, 196628, 3, 65538, 327678, 3, 65536, 327679, 3, 65538, 262148, 3, 65536, 262149, 3, 3, 262150, 3, 131073, 262151, 3, 131073, 262152, 3, 131073, 262153, 3, 131073, 262154, 3, 131073, 262155, 3, 131073, 262156, 3, 131073, 262157, 3, 131073, 262158, 3, 131073, 262159, 3, 131073, 262160, 3, 131073, 262161, 3, 131073, 262162, 3, 4, 262163, 3, 65537, 262164, 3, 65538, 393214, 3, 65536, 393215, 3, 65538, 327684, 3, 65536, 327685, 3, 65538, 327698, 3, 65536, 327699, 3, 65537, 327700, 3, 65538, 458750, 3, 65536, 458751, 3, 65538, 393220, 3, 131072, 393221, 3, 131074, 393234, 3, 65536, 393235, 3, 65537, 393236, 3, 65538, 524286, 3, 65536, 524287, 3, 65538, 458770, 3, 65536, 458771, 3, 65537, 458772, 3, 65538, 589822, 3, 65536, 589823, 3, 65538, 524306, 3, 65536, 524307, 3, 65537, 524308, 3, 65538, 655358, 3, 65536, 655359, 3, 65539, 589824, 3, 1, 589825, 3, 1, 589826, 3, 1, 589827, 3, 1, 589828, 3, 1, 589829, 3, 1, 589830, 3, 1, 589831, 3, 1, 589832, 3, 1, 589833, 3, 1, 589834, 3, 1, 589835, 3, 1, 589836, 3, 1, 589837, 3, 1, 589838, 3, 1, 589839, 3, 1, 589840, 3, 1, 589841, 3, 1, 589842, 3, 65540, 589843, 3, 65537, 589844, 3, 65538, 720894, 3, 65536, 720895, 3, 65537, 655360, 3, 65537, 655361, 3, 65537, 655362, 3, 65537, 655363, 3, 65537, 655364, 3, 65537, 655365, 3, 65537, 655366, 3, 65537, 655367, 3, 65537, 655368, 3, 65537, 655369, 3, 65537, 655370, 3, 65537, 655371, 3, 65537, 655372, 3, 65537, 655373, 3, 65537, 655374, 3, 65537, 655375, 3, 65537, 655376, 3, 65537, 655377, 3, 65537, 655378, 3, 65537, 655379, 3, 65537, 655380, 3, 65538, 786430, 3, 65536, 786431, 3, 65537, 720896, 3, 65537, 720897, 3, 65537, 720898, 3, 65537, 720899, 3, 65537, 720900, 3, 65537, 720901, 3, 65537, 720902, 3, 65537, 720903, 3, 65537, 720904, 3, 65537, 720905, 3, 65537, 720906, 3, 65537, 720907, 3, 65537, 720908, 3, 65537, 720909, 3, 65537, 720910, 3, 65537, 720911, 3, 65537, 720912, 3, 65537, 720913, 3, 65537, 720914, 3, 65537, 720915, 3, 65537, 720916, 3, 65538, 851966, 3, 131072, 851967, 3, 131073, 786432, 3, 131073, 786433, 3, 131073, 786434, 3, 131073, 786435, 3, 131073, 786436, 3, 131073, 786437, 3, 131073, 786438, 3, 131073, 786439, 3, 131073, 786440, 3, 131073, 786441, 3, 131073, 786442, 3, 131073, 786443, 3, 131073, 786444, 3, 131073, 786445, 3, 131073, 786446, 3, 131073, 786447, 3, 131073, 786448, 3, 131073, 786449, 3, 131073, 786450, 3, 131073, 786451, 3, 131073, 786452, 3, 131074 )
+
+[node name="Lvl" type="Node2D" parent="."]
+
+[node name="Lvl1" type="Area2D" parent="Lvl"]
+position = Vector2( 112, 88 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl1"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl1"]
+position = Vector2( -0.499313, -0.538685 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl2" type="Area2D" parent="Lvl"]
+position = Vector2( 152, 88 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl2"]
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl2"]
+position = Vector2( -0.520294, -0.520264 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl3" type="Area2D" parent="Lvl"]
+position = Vector2( 192, 88 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl3"]
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl3"]
+position = Vector2( -0.477085, -0.574036 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl4" type="Area2D" parent="Lvl"]
+position = Vector2( 232, 88 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl4"]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl4"]
+position = Vector2( -0.496628, -0.529732 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl5" type="Area2D" parent="Lvl"]
+position = Vector2( 272, 88 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl5"]
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl5"]
+position = Vector2( -0.515015, -0.515045 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl6" type="Area2D" parent="Lvl"]
+position = Vector2( 112, -8 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl6"]
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl6"]
+position = Vector2( -0.525562, -0.533434 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl7" type="Area2D" parent="Lvl"]
+position = Vector2( 152, -8 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl7"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl7"]
+position = Vector2( -0.540684, -0.558945 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl8" type="Area2D" parent="Lvl"]
+position = Vector2( 192, -8 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl8"]
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl8"]
+position = Vector2( -0.501137, -0.501133 )
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl9" type="Area2D" parent="Lvl"]
+position = Vector2( 232, -8 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl9"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl9"]
+position = Vector2( -0.446457, -0.54567 )
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lvl10" type="Area2D" parent="Lvl"]
+position = Vector2( 272, -8 )
+
+[node name="Sprite" type="Sprite" parent="Lvl/Lvl10"]
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lvl/Lvl10"]
+position = Vector2( -0.500565, -0.537769 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 24 )
+[connection signal="body_entered" from="Lvl/Lvl1" to="." method="_on_Lvl1_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl2" to="." method="_on_Lvl2_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl3" to="." method="_on_Lvl3_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl4" to="." method="_on_Lvl4_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl5" to="." method="_on_Lvl5_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl6" to="." method="_on_Lvl6_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl7" to="." method="_on_Lvl7_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl8" to="." method="_on_Lvl8_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl9" to="." method="_on_Lvl9_body_entered"]
+[connection signal="body_entered" from="Lvl/Lvl10" to="." method="_on_Lvl10_body_entered"]

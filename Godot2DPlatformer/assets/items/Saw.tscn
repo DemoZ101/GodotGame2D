@@ -59,7 +59,7 @@ script = ExtResource( 2 )
 position = Vector2( -9.43373, -3.90672 )
 rotation = -3.14159
 frames = SubResource( 9 )
-frame = 3
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true

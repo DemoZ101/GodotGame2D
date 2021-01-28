@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/items/FallingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://assets/items/Platform/Falling/Falling.png" type="Texture" id=2]
+[ext_resource path="res://assets/items/Platform/Falling/On (32x10).png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.8665, 4.87747 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Shake"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0488586, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 1.5, 0 ), Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( -1.5, 0 ), Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 1.5, 0 ), Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 32, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "On",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Off",
+"speed": 5.0
+} ]
+
+[node name="FallingPlatform" type="KinematicBody2D"]
+collision_layer = 2147483649
+collision_mask = 2
+motion/sync_to_physics = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite")
+playback_speed = 2.5
+anims/Shake = SubResource( 2 )
+
+[node name="ResetTimer" type="Timer" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 0 )
+frames = SubResource( 3 )
+animation = "On"
+playing = true
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_ResetTimer_timeout"]

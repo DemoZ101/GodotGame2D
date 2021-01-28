@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/items/Platform/Saw/On (38x38).png" type="Texture" id=1]
+[ext_resource path="res://assets/items/Saw.gd" type="Script" id=2]
+[ext_resource path="res://assets/items/Platform/animationPingpong.tres" type="Animation" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 38, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 76, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 114, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 152, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 190, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 228, 0, 38, 38 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 266, 0, 38, 38 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 25.0
+} ]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 19.8107
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 118.437, -3.90672, 0, 0, 0, 0, -135.238, -3.90672 )
+}
+
+[node name="Saw" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9.43373, -3.90672 )
+rotation = -3.14159
+frames = SubResource( 9 )
+frame = 3
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+position = Vector2( -0.812737, 0.136246 )
+rotation = 3.7244e-09
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+shape = SubResource( 10 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 4.00903, 0 )
+curve = SubResource( 11 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -13.4428, -3.90672 )
+rotation = 3.14159
+offset = 131.68
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../AnimatedSprite")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animationPingpong"
+anims/animationPingpong = ExtResource( 3 )

@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/character/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tilesets/Terrain.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/items/Fan.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/items/Fire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/items/MovingPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/items/Saw.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/items/FallingPlatform.tscn" type="PackedScene" id=7]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 327680, 3, 0, 327681, 3, 1, 327682, 3, 1, 327683, 3, 1, 327684, 3, 1, 327685, 3, 1, 327686, 3, 1, 327687, 3, 1, 327688, 3, 1, 327689, 3, 1, 327690, 3, 1, 327691, 3, 1, 327692, 3, 1, 327693, 3, 2, 393216, 3, 131072, 393217, 3, 131073, 393218, 3, 131073, 393219, 3, 131073, 393220, 3, 131073, 393221, 3, 131073, 393222, 3, 131073, 393223, 3, 131073, 393224, 3, 131073, 393225, 3, 131073, 393226, 3, 131073, 393227, 3, 131073, 393228, 3, 131073, 393229, 3, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 30.3188, 50.2736 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 5 )]
+
+[node name="Saw" parent="." instance=ExtResource( 6 )]
+position = Vector2( 175.677, -68.6711 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="FallingPlatform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 80.7966, -59.7621 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="FallingPlatform2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 114.651, -59.3166 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="FallingPlatform3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 147.169, -58.4258 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Fire" parent="." instance=ExtResource( 4 )]
+position = Vector2( 131.132, 67.6364 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Fan" parent="." instance=ExtResource( 3 )]
+position = Vector2( 183.695, 77.8817 )
+scale = Vector2( 0.8, 0.8 )

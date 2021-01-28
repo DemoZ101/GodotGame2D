@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/items/Platform/animationPingpong.tres" type="Animation" id=1]
+[ext_resource path="res://assets/items/Platform/Moving/On (32x10).png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.7677, 1.99794 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 10 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 10 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -66.5313 )
+}
+
+[node name="MovingPlatform" type="Node"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+motion/sync_to_physics = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, -2 )
+z_as_relative = false
+shape = SubResource( 1 )
+one_way_collision = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotate = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../KinematicBody2D")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Pingpong"
+playback_process_mode = 0
+anims/Pingpong = ExtResource( 1 )

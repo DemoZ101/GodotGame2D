@@ -30,8 +30,6 @@ func _state_logic(delta):
 	if state == states.wall_slide:
 		parent._cap_gravity_wall_slide()
 	parent._apply_movement()
-
-
 func _get_transition(delta):
 	match state:
 		states.idle:

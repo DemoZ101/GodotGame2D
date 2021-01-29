@@ -203,7 +203,7 @@ script = ExtResource( 5 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 12
-frame = 30
+frame = 38
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.717 )
@@ -257,25 +257,25 @@ anims/flash = SubResource( 13 )
 anims/rest = SubResource( 14 )
 
 [node name="LeftWallRayCast2" type="RayCast2D" parent="."]
-position = Vector2( -8, 15 )
+position = Vector2( -8, 13 )
 scale = Vector2( 0.5, 0.5 )
 enabled = true
 cast_to = Vector2( -4, 0 )
 
 [node name="LeftWallRayCast1" type="RayCast2D" parent="."]
-position = Vector2( -8, -8 )
+position = Vector2( -8, -2 )
 scale = Vector2( 0.5, 0.5 )
 enabled = true
 cast_to = Vector2( -4, 0 )
 
 [node name="RightWallRayCast2" type="RayCast2D" parent="."]
-position = Vector2( 8, 15 )
+position = Vector2( 8, 13 )
 scale = Vector2( 0.5, 0.5 )
 enabled = true
 cast_to = Vector2( 6, 0 )
 
 [node name="RightWallRayCast1" type="RayCast2D" parent="."]
-position = Vector2( 8, -8 )
+position = Vector2( 8, -2 )
 scale = Vector2( 0.5, 0.5 )
 enabled = true
 cast_to = Vector2( 6, 0 )

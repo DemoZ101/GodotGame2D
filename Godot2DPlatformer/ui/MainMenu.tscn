@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/character/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/Terrain.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://assets/Background/Yellow.png" type="Texture" id=6]
 [ext_resource path="res://assets/04B_30__.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/audio/POL-star-way-short.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.5427, 16.8439 )
@@ -86,5 +87,10 @@ text = "flinn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
 [connection signal="body_entered" from="Play" to="." method="_on_Play_body_entered"]
 [connection signal="body_entered" from="ChooseLvl" to="." method="_on_ChooseLvl_body_entered"]

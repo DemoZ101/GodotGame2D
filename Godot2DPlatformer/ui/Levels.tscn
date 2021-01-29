@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/character/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/Terrain.tres" type="TileSet" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://ui/Levels/09.png" type="Texture" id=11]
 [ext_resource path="res://ui/Levels/08.png" type="Texture" id=12]
 [ext_resource path="res://ui/Levels.gd" type="Script" id=13]
+[ext_resource path="res://assets/audio/POL-moon-castle-short.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/Background/Pink.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.47585, 7.49802 )
@@ -46,6 +48,18 @@ extents = Vector2( 8.59576, 7.55439 )
 
 [node name="Levels" type="Node2D"]
 script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -168, -216 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_as_relative = false
+motion_mirroring = Vector2( 896, 896 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -216,7 +230,12 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, 24 )
+position = Vector2( 40, 88 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -10.0
+autoplay = true
 [connection signal="body_entered" from="Lvl/Lvl1" to="." method="_on_Lvl1_body_entered"]
 [connection signal="body_entered" from="Lvl/Lvl2" to="." method="_on_Lvl2_body_entered"]
 [connection signal="body_entered" from="Lvl/Lvl3" to="." method="_on_Lvl3_body_entered"]

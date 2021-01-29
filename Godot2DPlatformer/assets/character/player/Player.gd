@@ -5,7 +5,7 @@ signal dead
 
 const UP = Vector2(0,-1)
 const SLOPE_STOP = 64
-const WALL_JUMP_VELOCITY = Vector2(-200, -260)
+const WALL_JUMP_VELOCITY = Vector2(-260, -260)
 
 var velocity = Vector2()
 var move_speed = 100.0
@@ -29,6 +29,8 @@ onready var jumps = $JumpSound
 
 func _physics_process(delta):
 	_get_input()
+	if position.y > 400:
+		GameState.restart()
 
 func _apply_gravity(delta):
 	velocity.y += gravity*delta
@@ -48,7 +50,6 @@ func _apply_movement():
 		velocity.x = 0
 	
 	var stop_on_slope = true if get_floor_velocity().x == 0 else false
-	
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2(0,-1), stop_on_slope)
 
 	for idx in range(get_slide_count()):
@@ -114,9 +115,9 @@ func hurt():
 		$HurtSound.play()
 		print ("player hurt")
 		$AnimationPlayer.play("hurt")
-		velocity.x = -last_record_direction * 500
-		velocity.x = -last_record_direction * 500
+		velocity.x = -last_record_direction * 200
 		velocity.y = -150
+		#position.x += -last_record_direction * 20
 		life -= 1
 		emit_signal("life_changed",life)
 		if life == 0:

@@ -15,6 +15,7 @@ func init(type, pos):
 func _on_Collectible_body_entered(body):
 	emit_signal('pickup')
 	$AnimationPlayer.play("picked")
+	$CollisionShape2D.disabled
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:

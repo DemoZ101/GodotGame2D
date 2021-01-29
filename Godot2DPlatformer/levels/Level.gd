@@ -8,6 +8,7 @@ var Danger_Left = preload('res://assets/items/SpikeLeft.tscn')
 var Danger_Right = preload('res://assets/items/SpikeRight.tscn')
 var Danger_Top = preload('res://assets/items/SpikeTop.tscn')
 var Danger_Fall = preload('res://assets/items/SpikeFall.tscn')
+var Water = preload('res://assets/items/Water.tscn')
 
 onready var pickups = $Pickups
 onready var dangers = $Danger
@@ -48,7 +49,7 @@ func spawn_spikes():
 	for cell in dangers.get_used_cells():
 		var id = dangers.get_cellv(cell)
 		var type = dangers.tile_set.tile_get_name(id)
-		if type in ['Down', 'Left', 'Top', 'Right', 'Fall']:
+		if type in ['Down', 'Left', 'Top', 'Right', 'Fall','water']:
 			if type == 'Down':
 				var d = Danger_Down.instance()
 				var pos = dangers.map_to_world(cell)
@@ -71,6 +72,11 @@ func spawn_spikes():
 				add_child(d)
 			if type == 'Fall':
 				var d = Danger_Fall.instance()
+				var pos = dangers.map_to_world(cell)
+				d.init(pos + dangers.cell_size/2)
+				add_child(d)
+			if type == 'water':
+				var d = Water.instance()
 				var pos = dangers.map_to_world(cell)
 				d.init(pos + dangers.cell_size/2)
 				add_child(d)

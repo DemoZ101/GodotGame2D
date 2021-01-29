@@ -1,6 +1,6 @@
 extends Node
 
-var num_levels = 5
+var num_levels = 10
 var current_level = 1
 var total_life = 2
 

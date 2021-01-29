@@ -107,24 +107,24 @@ position = Vector2( 600.103, 160.319 )
 [node name="MovingPlatform" parent="." instance=ExtResource( 12 )]
 
 [node name="KinematicBody2D" parent="MovingPlatform" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2560, -320 )
 
 [node name="Path2D" parent="MovingPlatform" index="1"]
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2560, -320 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 12 )]
 
 [node name="KinematicBody2D" parent="MovingPlatform2" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2624, -344 )
 
 [node name="Path2D" parent="MovingPlatform2" index="1"]
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="MovingPlatform2/Path2D" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2624, -344 )
 [connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 
 [editable path="MovingPlatform"]

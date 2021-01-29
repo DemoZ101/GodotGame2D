@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 0
-var fall_speed = 50
+var fall_speed = 550
 
 var velocity = Vector2()
 

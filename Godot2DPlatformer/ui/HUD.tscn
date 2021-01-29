@@ -1,11 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/HUD.gd" type="Script" id=1]
-[ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/04B_30__.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/PlayerIcon64x64.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 51
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="HUD" type="MarginContainer"]
@@ -26,13 +28,11 @@ margin_right = 974.0
 margin_bottom = 84.0
 
 [node name="ScoreLabel" type="Label" parent="HBoxContainer"]
-margin_top = 5.0
+margin_top = 6.0
 margin_right = 584.0
-margin_bottom = 59.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 custom_constants/shadow_as_outline = 5

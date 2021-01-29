@@ -6,7 +6,7 @@
 [ext_resource path="res://ui/Button/Levels.png" type="Texture" id=4]
 [ext_resource path="res://ui/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://assets/Background/Yellow.png" type="Texture" id=6]
-[ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/04B_30__.TTF" type="DynamicFontData" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.5427, 16.8439 )
@@ -15,7 +15,7 @@ extents = Vector2( 25.5427, 16.8439 )
 extents = Vector2( 25.554, 16.8233 )
 
 [sub_resource type="DynamicFont" id=3]
-outline_size = 1
+size = 17
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
@@ -75,13 +75,14 @@ position = Vector2( 160, 128 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 2.0
-margin_left = 88.0
-margin_top = 8.0
-margin_right = 166.0
-margin_bottom = 26.0
+margin_left = 104.0
+margin_top = 16.0
+margin_right = 180.0
+margin_bottom = 36.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 3 )
-text = "FLINN"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "flinn"
 __meta__ = {
 "_edit_use_anchors_": false
 }

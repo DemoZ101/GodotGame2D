@@ -13,27 +13,27 @@
 [ext_resource path="res://assets/items/MovingPlatform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/character/enemies/Pig/Pig.tscn" type="PackedScene" id=12]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 704, 56, 0, 0, 0, 0, 864, 56 )
 }
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1776, 104, 0, 0, 0, 0, 1864, 104 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2000, 104, 0, 0, 0, 0, 1912, 104 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2432, 72, 0, 0, 0, 0, 2528, 72 )
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2752, 72, 0, 0, 0, 0, 2880, 72 )
 }
@@ -98,7 +98,6 @@ position = Vector2( 2632, 24 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 5 )]
-visible = false
 margin_bottom = 104.0
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 11 )]
@@ -107,10 +106,10 @@ margin_bottom = 104.0
 position = Vector2( 704, 56 )
 
 [node name="AnimatedSprite" parent="MovingPlatform/KinematicBody2D" index="1"]
-frame = 0
+frame = 1
 
 [node name="Path2D" parent="MovingPlatform" index="1"]
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
 position = Vector2( 704, 56 )
@@ -130,10 +129,10 @@ position = Vector2( 1200, 32 )
 position = Vector2( 1776, 104 )
 
 [node name="AnimatedSprite" parent="MovingPlatform2/KinematicBody2D" index="1"]
-frame = 3
+frame = 0
 
 [node name="Path2D" parent="MovingPlatform2" index="1"]
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="MovingPlatform2/Path2D" index="0"]
 position = Vector2( 1776, 104 )
@@ -143,8 +142,11 @@ position = Vector2( 1776, 104 )
 [node name="KinematicBody2D" parent="MovingPlatform3" index="0"]
 position = Vector2( 2000, 104 )
 
+[node name="AnimatedSprite" parent="MovingPlatform3/KinematicBody2D" index="1"]
+frame = 3
+
 [node name="Path2D" parent="MovingPlatform3" index="1"]
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" parent="MovingPlatform3/Path2D" index="0"]
 position = Vector2( 2000, 104 )
@@ -160,11 +162,8 @@ position = Vector2( 2256, 96 )
 [node name="KinematicBody2D" parent="MovingPlatform4" index="0"]
 position = Vector2( 2432, 72 )
 
-[node name="AnimatedSprite" parent="MovingPlatform4/KinematicBody2D" index="1"]
-frame = 1
-
 [node name="Path2D" parent="MovingPlatform4" index="1"]
-curve = SubResource( 5 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D" parent="MovingPlatform4/Path2D" index="0"]
 position = Vector2( 2432, 72 )
@@ -172,19 +171,20 @@ position = Vector2( 2432, 72 )
 [node name="MovingPlatform5" parent="." instance=ExtResource( 11 )]
 
 [node name="KinematicBody2D" parent="MovingPlatform5" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2752, 72 )
 
 [node name="AnimatedSprite" parent="MovingPlatform5/KinematicBody2D" index="1"]
-frame = 0
+frame = 1
 
 [node name="Path2D" parent="MovingPlatform5" index="1"]
-curve = SubResource( 6 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" parent="MovingPlatform5/Path2D" index="0"]
-position = Vector2( 864, 56 )
+position = Vector2( 2752, 72 )
 
 [node name="Pig6" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1904, -16 )
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 
 [editable path="MovingPlatform"]
 

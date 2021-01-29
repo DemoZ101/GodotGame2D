@@ -32,7 +32,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -66.5313 )
+"points": PoolVector2Array( 0, 0, 0, 0, 864, 56, 0, 0, 0, 0, 704, 56, 0, 0, 0, 0, 784, 56 )
 }
 
 [node name="MovingPlatform" type="Node"]

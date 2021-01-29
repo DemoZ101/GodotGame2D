@@ -69,7 +69,7 @@ scale = Vector2( 1, 1.0069 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 14
-frame = 21
+frame = 32
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 1 )

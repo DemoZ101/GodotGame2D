@@ -20,11 +20,6 @@ func _input(event):
 			parent.wall_jump()
 			set_state(states.jump)
 			parent.jumps.play()
-	elif state == states.jump:
-		if event.is_action_pressed("jump") && parent.air_jump == true:
-			parent.velocity.y = parent.jump_velocity*0.8
-			parent.is_jumping = true
-			parent.air_jump = false
 
 func _state_logic(delta):
 	parent._update_move_diretion()

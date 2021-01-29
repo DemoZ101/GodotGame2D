@@ -32,6 +32,7 @@ func _physics_process(delta):
 
 func _apply_gravity(delta):
 	velocity.y += gravity*delta
+	#print(velocity.y)
 
 func _cap_gravity_wall_slide():
 	var max_velocity = 30

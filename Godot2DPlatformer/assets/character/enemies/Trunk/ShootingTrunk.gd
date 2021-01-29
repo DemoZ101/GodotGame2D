@@ -27,6 +27,7 @@ func _physics_process(delta):
 	
 	velocity.y += gravity * delta
 	velocity.x = facing * speed
+	#print (velocity.y)
 	if player_in_range:
 		velocity.x = 0
 	velocity = move_and_slide(velocity, Vector2(0, -1))

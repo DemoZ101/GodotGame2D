@@ -29,8 +29,6 @@ onready var jumps = $JumpSound
 
 func _physics_process(delta):
 	_get_input()
-	if position.y > 400:
-		GameState.restart()
 
 func _apply_gravity(delta):
 	velocity.y += gravity*delta
@@ -88,9 +86,6 @@ func wall_jump():
 	wall_jump_velocity.x *= wall_direction
 	velocity=wall_jump_velocity
 	$JumpSound.play()
-	print("wall jump")
-	print(wall_jump_velocity.x)
-	print(wall_jump_velocity.y)
 
 func _check_is_grounded():
 	for raycast in groundraycasts.get_children():
@@ -113,7 +108,6 @@ func hurt():
 		justtakedamage_timer.start()
 		effect_animation.play("flash")
 		$HurtSound.play()
-		print ("player hurt")
 		$AnimationPlayer.play("hurt")
 		velocity.x = -last_record_direction * 200
 		velocity.y = -150

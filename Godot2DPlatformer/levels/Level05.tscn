@@ -70,7 +70,7 @@ position = Vector2( 3696, -608 )
 margin_bottom = 104.0
 
 [node name="PlayerSpawn" type="Position2D" parent="."]
-position = Vector2( 40, 24 )
+position = Vector2( 35.2432, 76.3251 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 224, -80 )
@@ -79,9 +79,6 @@ position = Vector2( 224, -80 )
 
 [node name="KinematicBody2D" parent="MovingPlatform" index="0"]
 position = Vector2( 1648, -344 )
-
-[node name="AnimatedSprite" parent="MovingPlatform/KinematicBody2D" index="1"]
-frame = 1
 
 [node name="Path2D" parent="MovingPlatform" index="1"]
 curve = SubResource( 1 )
@@ -95,7 +92,6 @@ position = Vector2( 1648, -344 )
 position = Vector2( 2800, -416 )
 
 [node name="AnimatedSprite" parent="MovingPlatform2/KinematicBody2D" index="1"]
-frame = 0
 speed_scale = 0.1
 
 [node name="Path2D" parent="MovingPlatform2" index="1"]

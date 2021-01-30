@@ -41,9 +41,6 @@ func _physics_process(delta):
 		if velocity.y == 0:
 			if !$AnimationPlayer.is_playing():
 				$AnimationPlayer.play("idle")
-			print($AnimationPlayer.is_playing())
-
-
 
 func take_damage():
 	is_dead = true

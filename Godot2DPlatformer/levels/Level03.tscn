@@ -109,6 +109,9 @@ position = Vector2( 600.103, 160.319 )
 [node name="KinematicBody2D" parent="MovingPlatform" index="0"]
 position = Vector2( 2560, -320 )
 
+[node name="AnimatedSprite" parent="MovingPlatform/KinematicBody2D" index="1"]
+frame = 0
+
 [node name="Path2D" parent="MovingPlatform" index="1"]
 curve = SubResource( 1 )
 
@@ -119,6 +122,9 @@ position = Vector2( 2560, -320 )
 
 [node name="KinematicBody2D" parent="MovingPlatform2" index="0"]
 position = Vector2( 2624, -344 )
+
+[node name="AnimatedSprite" parent="MovingPlatform2/KinematicBody2D" index="1"]
+frame = 0
 
 [node name="Path2D" parent="MovingPlatform2" index="1"]
 curve = SubResource( 2 )

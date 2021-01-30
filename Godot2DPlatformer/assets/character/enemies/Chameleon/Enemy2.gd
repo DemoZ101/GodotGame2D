@@ -24,7 +24,6 @@ func _physics_process(delta):
 		var collision = get_slide_collision(idx)
 		if collision.collider.name == "Player":
 			collision.collider.hurt()
-	print(WaitingATimer)
 	
 
 
@@ -43,7 +42,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		AtkCD.start()
 	if anim_name == 'death':
 		queue_free()
-		print("enemies dead")
 
 func Attack():
 	if is_dead == false:
@@ -55,7 +53,6 @@ func _on_StartAttackRange_body_entered(body: Node) -> void:
 	if body.name == 'Player':
 			player_in_range = true
 			Attack()
-			print('aaaaaa')
 
 
 func _on_WaitingAttackTimer_timeout() -> void:

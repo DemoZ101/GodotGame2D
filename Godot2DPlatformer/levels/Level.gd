@@ -97,8 +97,9 @@ func _on_Player_dead():
 		GameState.restart()
 
 func _on_Door_body_entered(body):
-	print($PlayerSpawn.position)
-	$PlayerSpawn.position = $Door.position
-	print($PlayerSpawn.position.x)
-	print($Door.position.x)
+	if $PlayerSpawn.position != $Door.position:
+		$PlayerSpawn.position = $Door.position
+		$Door/AnimationPlayer.play("getpoint")
+	
+
 

@@ -13,6 +13,7 @@ var Water = preload('res://assets/items/Water.tscn')
 onready var pickups = $Pickups
 onready var dangers = $Danger
 onready var HUD = $CanvasLayer/HUD
+var player_life = 2
 var score = 0
 
 func _ready():
@@ -87,8 +88,17 @@ func _on_Collectible_pickup():
 	emit_signal('score_changed', score)
 
 func _on_Player_dead():
-	GameState.restart()
+	if player_life >=0:
+		player_life -=1
+		$Player.position = $PlayerSpawn.position
+		$Player.life = 3
+		print (player_life)
+	else:
+		GameState.restart()
 
 func _on_Door_body_entered(body):
-	GameState.next_level()
+	print($PlayerSpawn.position)
+	$PlayerSpawn.position = $Door.position
+	print($PlayerSpawn.position.x)
+	print($Door.position.x)
 

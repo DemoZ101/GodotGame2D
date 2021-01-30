@@ -115,7 +115,12 @@ func hurt():
 		life -= 1
 		emit_signal("life_changed",life)
 		if life == 0:
-			GameState.restart()
+			emit_signal("dead")
+			emit_signal("life_changed",life)
+
+func dead():
+	emit_signal("dead")
+	emit_signal("life_changed", life)
 
 func bounce(BOUNCY = bounce_velocity):
 	velocity.y = BOUNCY
